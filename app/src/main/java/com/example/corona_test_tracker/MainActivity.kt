@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             this.lifecycleOwner = this@MainActivity
             this.viewModel = mainViewModel;
         }
-        binding.viewModel.oneWayBindingValue.observe(this, {
+        mainViewModel.oneWayBindingValue.observe(this, {
             newValue -> Log.d("MainActivity", "Wert = ${newValue}")
         })
     }
