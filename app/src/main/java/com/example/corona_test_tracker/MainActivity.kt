@@ -2,6 +2,7 @@ package com.example.corona_test_tracker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.example.corona_test_tracker.databinding.ActivityMainBinding
@@ -20,5 +21,8 @@ class MainActivity : AppCompatActivity() {
             this.lifecycleOwner = this@MainActivity
             this.viewModel = mainViewModel;
         }
+        binding.viewModel.oneWayBindingValue.observe(this, {
+            newValue -> Log.d("MainActivity", "Wert = ${newValue}")
+        })
     }
 }

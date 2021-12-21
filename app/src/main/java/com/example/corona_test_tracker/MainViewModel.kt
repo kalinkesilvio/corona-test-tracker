@@ -11,4 +11,9 @@ class MainViewModel : ViewModel() {
 
     val oneWayBindingValue: LiveData<Int>
         get() = _oneWayBindingValue;
+
+    fun onIncrementOneWayBindingValue() {
+        val number = oneWayBindingValue.value?: -1
+        _oneWayBindingValue.value = number + 1
+    }
 }
